@@ -56,10 +56,10 @@ export default function AchievementsSection() {
             <div className="max-w-4xl mx-auto ">
               <div className="w-1/2 max-w-sm mx-auto mb-10">
                 <h2 className="text-4xl md:text-md subheader-text font-bold mb-4">
-                  Our Achievement
+                  By the Numbers
                 </h2>
                 <div className="text-md max-w-md mx-auto normal-text text-black">
-                  <p>Trusted by clients worldwide, we deliver digital products that elevate experiences.</p>
+                  <p>Trusted by clients worldwide, we deliver digital products that elevate experiences and drive real business outcomes.</p>
                 </div>
               </div>
             </div>
@@ -138,11 +138,11 @@ function PeekabooAnim({ img, hovered }: animateCards) {
 function FloatingTextAnim({ img, hovered }: animateCards) {
 
   const hoverTexts = [
-    "Creative",
-    "Design",
-    "Branding",
-    "Experience",
-    "Flow",
+    "AI",
+    "Mobile",
+    "Automation",
+    "Scale",
+    "Ship",
   ];
 
   return (

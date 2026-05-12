@@ -60,6 +60,9 @@ body {
 .price-button-bg{
   background-color: #E3767B;
 }
+.teal-button-bg{
+  background-color: #3AAFA9;
+}
 
 @keyframes kenburns {
   0% {
