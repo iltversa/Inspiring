@@ -26,7 +26,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight max-w-3xl mx-auto header-text text-black text-balance">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight max-w-3xl mx-auto subheader-text text-black text-balance">
               We Build AI-Powered Products
               <br />
               For Ambitious Businesses

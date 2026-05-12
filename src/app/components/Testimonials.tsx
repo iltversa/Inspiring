@@ -37,32 +37,15 @@ export default function TestimonialsCarousel() {
                                 {/* card wrapper with hover grow + overlap */}
                                 <div className="group relative transform transition-all duration-500 hover:scale-105 hover:z-20">
                                     <div className="rounded-3xl bg-white transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-200 overflow-hidden">
-                                        {/* Top images area with border + hover color effect */}
-                                        <div className="p-3">
-                                            <div className="rounded-2xl bg-white"> {/* outer round border */}
-                                                <div className="rounded-xl bg-gray-400/50 p-4 transition-colors duration-500 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-blue-300">
-                                                    <div className="flex items-center justify-center gap-6 h-44">
-                                                        {item.images.map((src, i) => (
-                                                            <img
-                                                                key={i}
-                                                                src={src}
-                                                                alt={`${item.author} image ${i}`}
-                                                                className="w-30 rounded-lg shadow-md object-cover"
-                                                            />
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         {/* Project label */}
-                                        <div className="px-6 pt-2 pb-1">
-                                            <span className="text-xs font-semibold uppercase tracking-wider text-[#E3767B] normal-text">
+                                        <div className="px-6 pt-6 pb-1">
+                                            <span className="text-xs font-semibold uppercase tracking-wider text-[#0EA5A0] normal-text">
                                                 {item.projectLabel}
                                             </span>
                                         </div>
 
                                         {/* Quote */}
-                                        <div className="px-6">
+                                        <div className="px-6 pt-2">
                                             <div className="px-6 py-4 rounded-tl-2xl rounded-tr-2xl rounded-br-2xl bg-gray-100 text-gray-600 text-sm leading-relaxed normal-text justify-start max-w-[80%]">
                                                 <p>{item.quote}</p>
                                             </div></div>

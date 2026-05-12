@@ -31,7 +31,7 @@ const projects = [
     tag1: "Sports Marketing",
     tag2: "Web",
     bg: "bg-gradient-to-br from-zinc-700 to-zinc-900",
-    accent: "text-amber-400",
+    accent: "text-blue-400",
   },
 ];
 
