@@ -53,11 +53,12 @@ export default function ServicesSection() {
                   </footer>
                 </blockquote>
 
-                <div className="flex items-center">
+                <div>
                   <img
                     src="/img/versaclimber.png"
                     alt="VersaClimber logo"
-                    className="h-10 object-contain opacity-80"
+                    style={{ width: "120px" }}
+                    className="object-contain opacity-80"
                   />
                 </div>
               </div>

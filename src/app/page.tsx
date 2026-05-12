@@ -5,7 +5,6 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import FaqSection from "./components/FaqSection";
 import LevelUpSection from "./components/LevelUpSection";
 import Footer from "./components/Footer";
-import AchievementCards from "./components/AchievementCards";
 import TestimonialCard from "./components/Testimonials";
 import FeaturesSection from "./components/FeaturesSection";
 import Gallery from "./components/Gallery";
@@ -104,7 +103,6 @@ export default function HeaderSection() {
       </nav>
 
       <Hero />
-      <AchievementCards />
       <FeaturesSection />
       <ServicesSection />
       <Gallery />
