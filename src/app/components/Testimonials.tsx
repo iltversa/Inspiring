@@ -54,6 +54,13 @@ export default function TestimonialsCarousel() {
                                                 </div>
                                             </div>
                                         </div>
+                                        {/* Project label */}
+                                        <div className="px-6 pt-2 pb-1">
+                                            <span className="text-xs font-semibold uppercase tracking-wider text-[#E3767B] normal-text">
+                                                {item.projectLabel}
+                                            </span>
+                                        </div>
+
                                         {/* Quote */}
                                         <div className="px-6">
                                             <div className="px-6 py-4 rounded-tl-2xl rounded-tr-2xl rounded-br-2xl bg-gray-100 text-gray-600 text-sm leading-relaxed normal-text justify-start max-w-[80%]">

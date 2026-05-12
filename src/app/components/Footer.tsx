@@ -3,44 +3,67 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="bottom-0 left-0 w-full z-50 bg-white/30 backdrop-blur-md border-dashed border-b-[1.5px] border-black/20">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-2 border-dashed border-l-[1.5px] border-r-[1.5px] border-black/20">
-        <footer className="w-full flex items-center justify-between py-4 text-black">
-          {/* Copyright */}
-          <p className="text-sm text-gray-600">
-            © 2025 InspiringLife All rights reserved
-          </p>
-
+    <footer className="bottom-0 left-0 w-full bg-white/30 backdrop-blur-md border-t border-dashed border-black/20 mt-10">
+      <div className="max-w-6xl mx-auto px-6 py-6 border-dashed border-l-[1.5px] border-r-[1.5px] border-black/20">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo */}
-{/* <div style={{ width: "40%" }} className=""> */}
-            <img style={{ width: "16%" }} src="img/InspringLogo-Transparent.png" loading="lazy" alt="company-logo" className="image" />
-          {/* </div> */}
-          {/* Links */}
-          <div className="flex items-center gap-6 text-sm text-gray-700">
-            <FooterLink href="#">Instagram</FooterLink>
-            <FooterLink href="mailto:info@inspiringlife.com">Email</FooterLink>
+          <img
+            style={{ width: "130px" }}
+            src="img/InspringLogo-Transparent.png"
+            loading="lazy"
+            alt="InspiringLife Technologies logo"
+            className="image"
+          />
+
+          {/* Nav links */}
+          <nav className="flex items-center gap-6 text-sm text-gray-600">
+            <FooterLink href="#work">Our Work</FooterLink>
+            <FooterLink href="#services">Services</FooterLink>
+            <FooterLink href="#comparison">About</FooterLink>
+            <FooterLink href="#faqs">Contact</FooterLink>
+          </nav>
+
+          {/* Social + contact */}
+          <div className="flex items-center gap-6 text-sm text-gray-600">
+            <FooterLink href="https://instagram.com" external>
+              Instagram
+            </FooterLink>
+            <FooterLink href="https://linkedin.com" external>
+              LinkedIn
+            </FooterLink>
+            <FooterLink href="mailto:hello@inspiringlife.cc">
+              Email
+            </FooterLink>
           </div>
-        </footer>
+        </div>
+
+        <div className="mt-6 pt-4 border-t border-dashed border-black/10 text-center">
+          <p className="text-xs text-gray-500 normal-text">
+            &copy; 2025 InspiringLife Technologies Pvt. Ltd. All rights reserved.
+          </p>
+        </div>
       </div>
-    </div>
+    </footer>
   );
 }
 
-/* Reusable footer link with hover dot + lift effect */
 function FooterLink({
   href,
   children,
+  external,
 }: {
   href: string;
   children: React.ReactNode;
+  external?: boolean;
 }) {
   return (
     <Link
       href={href}
-      className="relative group transition-all duration-300 hover:-translate-y-1"
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="relative group transition-all duration-300 hover:-translate-y-1 hover:text-black"
     >
       <span className="relative z-10">{children}</span>
-      {/* Animated dot */}
       <span className="absolute left-1/2 -translate-x-1/2 -bottom-[6px] w-1 h-1 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-y-[-2px]"></span>
     </Link>
   );

@@ -1,69 +1,100 @@
-// components/Gallery.tsx
-import Image from "next/image";
+"use client";
 
-type GalleryImage = {
-  src: string;
-  alt: string;
-  type?: string;
-};
+import { motion } from "framer-motion";
 
-const images: GalleryImage[] = [
-  { src: "/img/Bitmap.png", alt: "Coworking 2" },
-  { src: "/img/Bitmap_1.png", alt: "Coworking 2" },
-  { src: "/img/Bitmap_2.png", alt: "Coworking 2" },
-  { src: "/img/Bitmap_3.png", alt: "Coworking 2" },
-  { src: "/img/Bitmap_4.png", alt: "Coworking 2" },
-  // { src: "/img/Bitmap_5.png", alt: "Knowledge 1" },
-  // { src: "/img/Bitmap_6.png", alt: "Knowledge 1" },
-  // { src: "/img/Bitmap_7.png", alt: "Knowledge 1" },
-  // { src: "/img/Bitmap_8.png", alt: "Knowledge 1" },
+const projects = [
+  {
+    name: "VersaClimber App",
+    client: "Heart Rate Inc., USA",
+    description:
+      "Cross-platform mobile application for a leading fitness equipment brand — iOS, Android, and web, built to spec and shipped on schedule.",
+    tag1: "Fitness Tech",
+    tag2: "Mobile App",
+    bg: "bg-gradient-to-br from-gray-800 to-gray-900",
+    accent: "text-[#E3767B]",
+  },
+  {
+    name: "Community Platform",
+    client: "LincolnBerean, USA",
+    description:
+      "Custom mobile app for one of Nebraska's largest churches — built to connect thousands of members through events, content, and community tools.",
+    tag1: "Faith",
+    tag2: "Mobile App",
+    bg: "bg-gradient-to-br from-slate-700 to-slate-900",
+    accent: "text-blue-400",
+  },
+  {
+    name: "Brand & Digital Presence",
+    client: "Archrival, USA",
+    description:
+      "Full digital build for a top sports marketing agency — web development, design systems, and ongoing technical partnership.",
+    tag1: "Sports Marketing",
+    tag2: "Web",
+    bg: "bg-gradient-to-br from-zinc-700 to-zinc-900",
+    accent: "text-amber-400",
+  },
 ];
 
 export default function Gallery() {
   return (
-    <section id="work" className="w-full bg-[#f5f5f5e8] py-12">
-      <div className="max-w-6xl mx-auto px-6 text-center border-black/20 border-r-[1.5px] border-l-[1.5px] border-dashed">
-        <div className="border-black/20 border-b-[1.5px] border-dashed mb-4">
-          <div className="w-1/2 max-w-sm mx-auto mb-4">
-            <h2 className="text-black text-md normal-text mt-2">
-              Still confused about us
-            </h2>
-            <div className="text-4xl text-black md:text-md subheader-text font-bold mb-4">
-              <p>See our work</p>
-            </div>
-          </div>
+    <section id="work" className="w-full bg-[#f5f5f5e8] py-12 border-t-[1.5px] border-dashed border-black/20">
+      <div className="max-w-6xl mx-auto px-6 border-black/20 border-r-[1.5px] border-l-[1.5px] border-dashed">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12 border-black/20 border-b-[1.5px] border-dashed pb-6">
+          <h2 className="text-4xl md:text-5xl subheader-text font-bold text-black mb-3 text-balance">
+            Work We&apos;re Proud Of
+          </h2>
+          <p className="text-black/60 text-md normal-text leading-relaxed">
+            Real products, real clients, real outcomes.
+          </p>
         </div>
 
-        <div className="container mx-auto px-4 text-center border-gray-300 border-dashed">
-          <div className="grid md:grid-cols-2 gap-6">
-            {images.map((img, i) => (
-              <div
-                key={i}
-                className={`relative group overflow-hidden rounded-3xl shadow-lg ${i === 4 ? "md:col-span-2" : ""
-                  }`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={900}
-                  height={500}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
-                />
+        {/* Project Cards */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {projects.map((project, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              className={`group relative overflow-hidden rounded-3xl shadow-lg ${project.bg} min-h-[320px] flex flex-col justify-end p-7 cursor-pointer`}
+            >
+              {/* Subtle hover overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 rounded-3xl" />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
-
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transform translate-y-6 group-hover:translate-y-0 transition duration-500">
-                  <button className="px-6 py-2 bg-white text-black text-sm rounded-full shadow hover:bg-gray-100">
-                    View Project
-                  </button>
-                </div>
+              {/* Tags */}
+              <div className="flex gap-2 mb-4 relative z-10">
+                <span className="text-xs text-white/60 border border-white/20 rounded-full px-3 py-0.5 normal-text">
+                  {project.tag1}
+                </span>
+                <span className="text-xs text-white/60 border border-white/20 rounded-full px-3 py-0.5 normal-text">
+                  {project.tag2}
+                </span>
               </div>
-            ))}
-          </div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                <p className={`text-xs font-semibold uppercase tracking-wider mb-1 normal-text ${project.accent}`}>
+                  {project.client}
+                </p>
+                <h3 className="text-xl font-bold text-white mb-2 subheader-text">
+                  {project.name}
+                </h3>
+                <p className="text-white/60 text-sm normal-text leading-relaxed mb-5">
+                  {project.description}
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-1 text-sm text-white border border-white/20 rounded-full px-4 py-1.5 hover:bg-white/10 transition-all duration-300 normal-text"
+                >
+                  View Project →
+                </a>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
-
-
   );
 }
