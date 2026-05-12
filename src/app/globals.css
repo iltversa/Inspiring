@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  --background: rgba(245, 245, 245, .91);
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* --font-sans: var(--font-geist-sans); */
+  /* --font-mono: var(--font-geist-mono); */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgba(245, 245, 245, .91);
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+      font-family: "Inter", sans-serif;
+/* letter-spacing: -0.03em; */
+}
+.header-text{
+  font-family: "Phudu", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+.subheader-text{
+  font-family: "Satoshi","Satoshi Placeholder",sans-serif;
+  /* font-optical-sizing: auto; */
+  font-weight: 700;
+  font-style: normal;
+  /* letter-spacing: -0.04em; */
+}
+.normal-text {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 300; */
+  font-style: normal;
+} 
+/* .phudu-<uniquifier> {
+  font-family: "Phudu", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} 
+.inter-<uniquifier> {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}  
+*/
+.price-button-bg{
+  background-color: #E3767B;
+}
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  100% {
+    transform: scale(1.2) translate(10px, 10px);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 20s ease-in-out infinite alternate;
+}
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 2s ease-in-out infinite;
+  }
+}
+/* Header hero with grid overlay effect */
+.header-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #f5f5f5e8; /* matched bg tone */
+}
+
+/* Grid overlay, masked to center */
+.header-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(#ddd 1px, transparent 1px),
+    linear-gradient(90deg, #ddd 1px, transparent 1px);
+  background-size: 20px 20px; /* grid spacing */
+  z-index: 0;
+
+  /* mask to show only center */
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 60%);
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 60%);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: cover;
+}
+
+/* Soft vignette overlay to enhance effect */
+.header-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(245,245,245,0) 25%, rgba(245,245,245,0.85) 60%);
+  z-index: 1;
+}
+
+/* Content above everything */
+.header-hero .content {
+  position: relative;
+  z-index: 2;
+}
