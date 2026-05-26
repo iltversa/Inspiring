@@ -30,34 +30,35 @@ export default function TypingAnimation({
 
   // Typing and deleting logic
   useEffect(() => {
+    let timer: NodeJS.Timeout;
+
     if (isTyping) {
       // Typing phase
       if (displayedText.length < currentPhrase.length) {
-        const timer = setTimeout(() => {
+        timer = setTimeout(() => {
           setDisplayedText(currentPhrase.slice(0, displayedText.length + 1));
         }, speed);
-        return () => clearTimeout(timer);
       } else {
         // Finished typing, wait before deleting
-        const pauseTimer = setTimeout(() => {
+        timer = setTimeout(() => {
           setIsTyping(false);
         }, pauseDuration);
-        return () => clearTimeout(pauseTimer);
       }
     } else {
       // Deleting phase
       if (displayedText.length > 0) {
-        const timer = setTimeout(() => {
+        timer = setTimeout(() => {
           setDisplayedText(displayedText.slice(0, -1));
         }, speed / 2);
-        return () => clearTimeout(timer);
       } else {
         // Move to next phrase
         setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
         setIsTyping(true);
       }
     }
-  }, [displayedText, isTyping, currentPhrase, speed, pauseDuration]);
+
+    return () => clearTimeout(timer);
+  }, [displayedText, isTyping, currentPhrase, currentPhraseIndex, speed, pauseDuration, phrases.length]);
 
   return (
     <span className="inline-flex items-baseline gap-0">
