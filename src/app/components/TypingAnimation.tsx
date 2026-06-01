@@ -62,11 +62,12 @@ export default function TypingAnimation({
 
   return (
     <span className="inline-flex items-baseline gap-0">
-      <span className="text-red-600">{displayedText}</span>
+      <span style={{ color: "#E31E24" }}>{displayedText}</span>
       <span
-        className={`ml-1 inline-block w-[3px] h-[1.2em] bg-red-600 ${
+        className={`ml-1 inline-block w-[3px] h-[1.2em] transition-opacity duration-100 ${
           showCursor ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-100`}
+        }`}
+        style={{ backgroundColor: "#E31E24" }}
       />
     </span>
   );
