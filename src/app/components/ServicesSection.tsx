@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import TypingAnimation from "./TypingAnimation";
 
 export default function ServicesSection() {
   return (
@@ -25,7 +24,7 @@ export default function ServicesSection() {
               {/* Left: Copy */}
               <div>
                 <h2 className="text-3xl md:text-4xl subheader-text font-bold text-black mb-4 text-balance">
-                  We Know Fitness Tech — <TypingAnimation phrases={["Ambitious Business", "STRUGGLING BUSINESS"]} />
+                  We Know Fitness Tech
                 </h2>
                 <p className="text-black/60 text-sm normal-text leading-relaxed mb-6">
                   VersaClimber — one of the most respected names in high-performance fitness equipment — trusted iLT to build their cross-platform app. We delivered on a tight timeline, across iOS, Android, and web, without a single hiccup.
