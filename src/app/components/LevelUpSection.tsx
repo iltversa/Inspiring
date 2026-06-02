@@ -24,7 +24,7 @@ export default function LevelUpSection() {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
-          className="price-button-bg px-8 py-3 rounded-full text-white text-sm font-medium normal-text shadow-[0_0_20px_rgba(227,118,123,0.4)] transition-all hover:shadow-[0_0_40px_rgba(227,118,123,0.6)]"
+          className="teal-button-bg px-8 py-3 rounded-full text-white text-sm font-medium normal-text shadow-[0_0_20px_rgba(14,165,160,0.4)] transition-all hover:shadow-[0_0_40px_rgba(14,165,160,0.6)]"
         >
           Book a Discovery Call →
         </motion.a>

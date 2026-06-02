@@ -36,7 +36,7 @@ export default function ServicesSection() {
                   href="https://calendly.com/inspiringlife"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="price-button-bg shadow-xl text-white text-sm font-medium px-6 py-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl normal-text inline-block"
+                  className="teal-button-bg shadow-xl text-white text-sm font-medium px-6 py-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl normal-text inline-block"
                 >
                   Book a Discovery Call →
                 </a>

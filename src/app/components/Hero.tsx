@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Globe, Award } from "lucide-react";
 import LogoCarousel from "./LogoCarousel";
+import TypingAnimation from "./TypingAnimation";
 
 export default function Hero() {
   return (
@@ -29,7 +30,7 @@ export default function Hero() {
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight max-w-3xl mx-auto header-text text-black text-balance">
               We Build AI-Powered Products
               <br />
-              For Ambitious Businesses
+              For <TypingAnimation phrases={["Ambitious Business", "Struggling Business"]} />
             </h1>
 
             <p className="mt-5 text-black/70 text-base normal-text max-w-[560px] mx-auto leading-relaxed text-pretty">
